@@ -12,18 +12,11 @@ async function run() {
     // Connect to the "insertDB" database and access its "haiku" collection
     const database = client.db(config.mongodb.database);
     const haiku = database.collection("message");
-    
-    // Create a document to insert
-    const doc = {
-//      title: "Record of a Shriveled Datum",
-      fecha: date_time,
-      content: "No bytes, no problem. Just insert a document, in MongoDB",
-    }
-    // Insert the defined document into the "haiku" collection
-    const result = await haiku.insertOne(doc);
+
+    const result = await haiku.find({});
 
     // Print the ID of the inserted document
-    console.log(`A document was inserted with the _id: ${result.insertedId}`);
+    console.log(result.toArray());
   } finally {
      // Close the MongoDB client connection
     await client.close();
