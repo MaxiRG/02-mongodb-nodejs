@@ -23,8 +23,6 @@ This project is a smart vending machine system built using an ESP32 microcontrol
 
 ## Architecture
 
-![Architecture Diagram](link-to-architecture-diagram)
-
 - **ESP32**: Controls the hardware components (motors, sensors) and communicates with the AWS VM.
 - **AWS VM**: Hosts the backend services, including the database and API, for managing the vending machine.
 
